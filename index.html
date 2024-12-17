@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page">
+        <header>
+            <h1>Welcome to My Application</h1>
+            <p>Your gateway to managing your data efficiently.</p>
+            <button onclick="navigateTo('login-page')">Get Started</button>
+        </header>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page hidden">
+        <header>
+            <h2>Login</h2>
+        </header>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page hidden">
+        <header>
+            <h2>Home Page</h2>
+            <button onclick="logout()">Logout</button>
+        </header>
+        <main>
+            <h3>Data Table</h3>
+            <button onclick="showCreateForm()">Add New Record</button>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>الاسم</th>
+                        <th>العنوان</th>
+                        <th>تاريخ الإنشاء</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- البيانات ستظهر هنا -->
+                </tbody>
+            </table>
+        </main>
+
+        <!-- Create/Edit Form -->
+        <div id="data-form" class="hidden">
+            <form id="record-form">
+                <input type="hidden" id="record-id">
+                <label for="record-name">Name:</label>
+                <input type="text" id="record-name" required>
+
+                <label for="record-address">Address:</label>
+                <input type="text" id="record-address" required>
+
+                <button type="submit">Save</button>
+                <button type="button" onclick="hideCreateForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
